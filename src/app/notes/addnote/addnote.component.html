@@ -1,0 +1,17 @@
+<body>
+  <form #addnote="ngForm">
+    <div class="container">
+      <div class="inputs">
+        <div class="ttl">Add Your Note</div>
+        <label>Title</label>
+        <input name="title" placeholder="title" [(ngModel)]="note.title" [required]="true" />
+        <label> Body</label>
+        <textarea name="body" placeholder="Body" [(ngModel)]="note.body" [required]="true"></textarea>
+        <div class="buttons">
+          <button type="button" routerLink="/notes">Cancel</button>
+          <button type="suubmit" (click)="saveOnClick()" [disabled]="addnote.invalid">Save</button>
+        </div>
+      </div>
+    </div>
+  </form>
+</body>

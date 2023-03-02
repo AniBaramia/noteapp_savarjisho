@@ -1,0 +1,31 @@
+<body>
+  <div class="container">
+    <div class="search-container">
+      <input
+        class="sarchIcon"
+        type="image"
+        src="https://cdn-icons-png.flaticon.com/512/8915/8915520.png"
+        alt="Search"
+      />
+      <input
+        type="search"
+        name="search"
+        class="search"
+        placeholder="search your note"
+        [(ngModel)]="search"
+        (ngModelChange)="change()"
+      />
+    </div>
+    <div class="note-container" *ngFor="let note of notes">
+      <div class="notes">
+        <div class="buttons">
+          <img src="https://cdn-icons-png.flaticon.com/512/9845/9845999.png" [routerLink]="['/note', note.id]">
+          <img src="https://cdn-icons-png.flaticon.com/512/463/463323.png" (click)="removeOnClick(note.id)"></div>
+        <div class="ttl">{{note.title}}</div>
+        <div class="body">{{note.body}}</div>
+      </div>
+    </div>
+
+    <button class="add" type="button" routerLink="/addnote">+Add</button>
+  </div>
+</body>
